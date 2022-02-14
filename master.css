@@ -32,6 +32,9 @@ body {
   overflow-x: hidden;
   position: relative;
 }
+body {
+  background-color: white;
+}
 a {
   text-decoration: none;
   color: black;
