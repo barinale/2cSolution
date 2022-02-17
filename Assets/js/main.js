@@ -16,7 +16,9 @@ class Slider{
         }
         this.click= false;
         this.step = this.getSteps()
-        console.log(this.step)
+        this.LeftMove()
+        this.rightMove()
+
     }
     getSteps(){
         let step =0;
@@ -34,7 +36,6 @@ class Slider{
             this.check();
             this.click = true;}
             this.LeftMove()
-        
         })
         this.RightArrow.addEventListener('click',()=>{
             if(this.progress!=null){
@@ -73,16 +74,19 @@ class Slider{
         }
     }
     resize(){
+        this.items.style.left=`0px`;
         this.item = this.items.querySelectorAll('.item');
         this.postions = this.allPostion()
         this.step = this.getSteps()
-        this.click = true;
         if(this.progress!=null){
+            this.click = true;
             this.check()
             this.width=8;
         }
-          this.items.style.right=`0px`;
           this.postion =0;
+        this.items.style.left=`initial`;
+        this.items.style.right = this.postions[0]
+          
     }
     move(){
         
