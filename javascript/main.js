@@ -6,26 +6,26 @@ class Slider{
         this.items = items;
         this.merge = this.items.getBoundingClientRect().x;
         this.postion = 0;
-        this.addEvent()
+        this.addEvent();
         this.item = this.items.querySelectorAll('.item');
         this.postions = this.allPostion();
-        this.step = this.getStep()
         if(progress!=null){
-        this.progress = progress;
-        this.move()
-        this.width = 8;
+            this.progress = progress;
+            this.move()
+            this.width = 8;
         }
         this.click= false;
+        this.step = this.getSteps()
+        console.log(this.step)
     }
-    getStep(){
+    getSteps(){
         let step =0;
-            this.item.forEach(elemnt=>{
-                if(elemnt.getBoundingClientRect().x + elemnt.getBoundingClientRect().width>window.innerWidth){
-                    step++;
-                }
-            })
-            return step;
-
+        this.item.forEach(element=>{
+            if(element.getBoundingClientRect().x + element.getBoundingClientRect().width +this.merge>window.innerWidth){
+                step ++;
+            }
+        })
+        return step;
     }
     addEvent(){
         this.LeftArrow.addEventListener('click',()=>{
@@ -53,8 +53,7 @@ class Slider{
       return Array;
     }
     LeftMove(){
-        console.log("erere")
-        if(this.postion==this.postions.length-1){
+        if(this.postion==this.step){
             this.postion=0;
         this.items.style.right=`${this.postions[this.postion]}px`;
 
@@ -65,7 +64,7 @@ class Slider{
     }
     rightMove(){
         if(this.postion==0){
-            this.postion=this.postions.length-1;
+            this.postion=this.step;
           this.items.style.right=`${this.postions[this.postion]}px`;
         }else{
         this.postion--;
@@ -76,6 +75,7 @@ class Slider{
     resize(){
         this.item = this.items.querySelectorAll('.item');
         this.postions = this.allPostion()
+        this.step = this.getSteps()
         this.click = true;
         if(this.progress!=null){
             this.check()
