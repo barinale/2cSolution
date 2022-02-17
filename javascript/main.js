@@ -4,20 +4,28 @@ class Slider{
         this.LeftArrow = Arrow.querySelector('.rightArrow');
         this.RightArrow = Arrow.querySelector('.leftArrow');   
         this.items = items;
-        console.log(this.LeftArrow)
-        console.log(this.RightArrow) 
         this.merge = this.items.getBoundingClientRect().x;
         this.postion = 0;
         this.addEvent()
         this.item = this.items.querySelectorAll('.item');
         this.postions = this.allPostion();
+        this.step = this.getStep()
         if(progress!=null){
         this.progress = progress;
         this.move()
         this.width = 8;
         }
         this.click= false;
-        console.log(this.merge)
+    }
+    getStep(){
+        let step =0;
+            this.item.forEach(elemnt=>{
+                if(elemnt.getBoundingClientRect().x + elemnt.getBoundingClientRect().width>window.innerWidth){
+                    step++;
+                }
+            })
+            return step;
+
     }
     addEvent(){
         this.LeftArrow.addEventListener('click',()=>{
@@ -41,9 +49,7 @@ class Slider{
       let Array =[];
       this.item.forEach(element => {
           Array.push(element.getBoundingClientRect().x-this.merge)
-          console.log(this.merge)
       });
-      console.log(Array)
       return Array;
     }
     LeftMove(){
@@ -68,16 +74,15 @@ class Slider{
         }
     }
     resize(){
+        this.item = this.items.querySelectorAll('.item');
         this.postions = this.allPostion()
         this.click = true;
-               this.item = this.items.querySelectorAll('.item');
-
         if(this.progress!=null){
             this.check()
             this.width=8;
         }
           this.items.style.right=`0px`;
-
+          this.postion =0;
     }
     move(){
         
@@ -129,5 +134,4 @@ window.addEventListener('resize', ()=>{
     SliderMain3.resize()
 
 });
-
 
