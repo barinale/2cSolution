@@ -122,7 +122,7 @@ const SliderMain1 = new Slider(document.querySelector('#OeuvreMajeur .Arrows'),
                             ,null);
 
 
-const SliderMain2 = new Slider(document.querySelector('#calendrier .Arrow'),
+const SliderMain2 = new Slider(document.querySelector('#calendrier .OeuvreArrow'),
                             document.querySelector('#calendrier .items')
                             ,null);
 
