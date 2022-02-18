@@ -1,4 +1,3 @@
-
 class Slider{
     constructor(Arrow,items,progress=null){
         this.LeftArrow = Arrow.querySelector('.rightArrow');
@@ -100,7 +99,7 @@ class Slider{
                         this.width=0;
                         this.LeftMove()
                     }
-            }
+                    }
             }, 70);
         
     }

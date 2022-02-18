@@ -231,6 +231,7 @@ header .Links {
   transition: 1s all;
   top: 60px;
 }
+
 input[id="ButtonLinks"]:checked + .Links {
   left: 0;
 }
@@ -246,9 +247,9 @@ header .Links hr {
 header .Links a {
   line-height: 1.2;
   opacity: 0.8;
-  font-family: "Canela-Light";
+  font-family: "Canela-Regular";
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 100;
 }
 header .Links > ul > li:hover a {
   opacity: 1;
@@ -423,14 +424,17 @@ header .linksHover:hover ul {
   height: 100%;
   position: absolute;
   background-color: black;
+  transition: 0.1s all;
   z-index: 2;
 }
+
 #main .Arrows {
   z-index: 60;
   position: absolute;
   top: 60%;
   width: 100%;
 }
+
 #main .Arrows .Arrow {
   display: inline-block;
 }
@@ -443,7 +447,7 @@ header .linksHover:hover ul {
   right: 0;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+  transform: rotate(180deg) translateY(5px);
 }
 /*Fin section Slider */
 /* section Oeuvre majeur */
@@ -1028,8 +1032,9 @@ footer .headerFooter .logo img {
   height: 100%;
 }
 footer .headerFooter .logosocialFooter {
-  width: 100px;
+  width: 79px;
   margin-left: 49px;
+  height: 26px;
 }
 footer .headerFooter .logosocialFooter img {
   width: 100%;
@@ -1199,9 +1204,9 @@ footer .footerLinks .item .copyRight .relation img {
   html {
     font-size: 16px;
   }
-  .container {
+  /* .container {
     width: 80%;
-  }
+  } */
   header {
     height: 70px;
   }
@@ -1380,6 +1385,7 @@ footer .footerLinks .item .copyRight .relation img {
   }
   #OeuvreMajeur .headerOeuvre .sectionTitle h2 {
     font-size: 40px;
+    font-weight: 300;
   }
 
   /* Gallery */
