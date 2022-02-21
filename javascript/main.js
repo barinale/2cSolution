@@ -106,7 +106,7 @@ class Slider {
   check() {
     setTimeout(() => {
       this.click = false;
-    }, 300000);
+    }, 3000);
   }
 }
 
