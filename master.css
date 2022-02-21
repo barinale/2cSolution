@@ -1389,6 +1389,12 @@ footer .footerLinks .item:last-child > * {
     height: 300px;
   }
   /* section Footer */
+  footer .headerFooter > span {
+    width: 899px;
+    height: 1px;
+    display: block;
+    background-color: white;
+  }
   footer .footerLinks {
     flex-direction: row;
     flex-wrap: wrap;
